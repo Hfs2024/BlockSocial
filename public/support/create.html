@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block - Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="support.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header>
+        <p class="logo">Block <span class="cursive">Support</span></p>
+        <i class="fas fa-home icon__3" onclick="window.location.href = '/search'"></i>
+    </header>
+
+    <div class="card">
+        <h1>Create an article: </h1>
+        <div class="input-group">
+            <label>Title: </label>
+            <input type="text" id="title" placeholder="Enter title..." />
+        </div></br></br>
+
+        <div class="input-group">
+            <label>Content: </label>
+            <textarea type="text" id="content" placeholder="Enter content..."></textarea>
+        </div></br></br>
+
+        <button style="width: 100%;" class='other-btn' id="submit-article">Submit article</button>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="card">
+        <h1>Update/Delete an article: </h1>
+        <div class="articles-container"></div></br>
+        <div class="input-group">
+            <button id="prev-btn" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+            <button id="next-btn" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Block</p>
+    </footer>
+
+    <script src="../js/get.js"></script>
+    <script src="js/get-articles.js"></script>
+    <script src="js/create-article.js"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6643325a9a809f19fb30b616/1htr7pchq';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+
+        getArticles({
+            update: true
+        });;
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block - Images</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <header>
+        <p class="logo">Block</p>
+        <div>
+            <i class="fas fa-user-plus" id="signUpBtn"></i>
+            <i class="fas fa-film" id="reelsBtn"></i>
+            <i class="fas fa-upload" onclick="window.location.href = '/upload'"></i>
+            <i class="fas fa-search" onclick="window.location.href = '/search'"></i>
+        </div>
+    </header>
+
+    <main style="text-align: center;">
+        <h1>Explore all your uploaded images!</h1>
+        <button class="view-fav-image">View favorites</button>
+        <div class="image-hall-container"></div>
+
+        <div class="pagination">
+            <button class="pagination-btn prev-btn"><i class="fas fa-chevron-left"></i>
+                Prev</button>
+            <button class="pagination-btn next-btn">Next <i
+                    class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <div class="how-to-upload-grid">
+            <div class="upload-card">
+                <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <h3>How to upload?</h3>
+                <p>Click the "Upload Image" button <a href="/" style="color: lightgreen;">here</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Block</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="module">
+        import { getUserTheme } from "/js/theme.js";
+        getUserTheme(document.querySelector(".left"), document.querySelector(".right"));
+    </script>
+
+    <script src="/js/checkLength.js"></script>
+    <script src="/js/get.js"></script>
+    <script src="/js/signup.js"></script>
+    <script src="/js/reels.js"></script>
+    <script src="/js/images.js"></script>
+
+</body>
+</html>

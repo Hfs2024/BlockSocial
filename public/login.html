@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block - LogIn</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+        <p class="logo">Block</p>
+        <div>
+            <i class="fas fa-user-plus" id="signUpBtn"></i>
+            <i class="fas fa-film" id="reelsBtn"></i>
+            <i class="fas fa-upload" onclick="window.location.href = '/upload'"></i>
+            <i class="fas fa-search" onclick="window.location.href = '/search'"></i>
+        </div>
+    </header>
+
+    <main>
+        <h1 style="text-align: center;">Login to your Block account!</h1>
+        <div class="input-container">
+            <label for="username">Username: </label></br></br>
+            <input type="text" id="username" placeholder="Enter username..." /></br></br>
+
+            <label for="password">Password: </label></br></br>
+            <input type="password" id="password" placeholder="Enter password..." /></br></br>
+
+            <button style="width: 100%;" id="logInBtn">LogIn</button>
+
+            <p style="text-align: center;"><a href="/forgot/password">Forgot your password?</a></p>
+            <p style="text-align: center;">Don't have an account? <a href="/signup">Sign Up</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Block</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/login-val.js"></script>
+</body>
+
+</html>

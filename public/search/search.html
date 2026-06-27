@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block - Search</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <p class="logo">Block</p>
+        <div>
+            <i class="fas fa-user-plus" id="signUpBtn"></i>
+            <i class="fas fa-film" id="reelsBtn"></i>
+            <i class="fas fa-upload" onclick="window.location.href = '/upload'"></i>
+            <i class="fas fa-search" onclick="window.location.href = '/search'"></i>
+        </div>
+    </header>
+
+    <main class="container-search">
+        <h1 style="text-align: center;">What do you want to search?</h1>
+        <h3 style="text-align: center;">Just choose the section you want to search and click the redirect button then
+            you
+            will be redirected within seconds!</h3>
+
+        <div class="search-cards-container">
+            <div class="search-card chosen-search-card">
+                <i class="fas fa-user-circle"></i>
+                <p class="title">Users</p>
+            </div>
+            <div class="search-card">
+                <i class="fas fa-headset"></i>
+                <p class="title">Support</p>
+            </div>
+        </div>
+
+        <div class="center">
+            <button id="redirectBtn" style="width: 90%;">Redirect</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Block</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="module">
+        import { getUserTheme } from "/../js/theme.js";
+        getUserTheme();
+    </script>
+    <script src="/../js/reels.js"></script>
+    <script src="/../js/signup.js"></script>
+    <script>
+        const redirectBtn = document.getElementById("redirectBtn");
+        const searchCards = document.querySelectorAll(".search-card");
+        let chosenSearch = "users";
+
+        searchCards.forEach(card => {
+            card.addEventListener("click", function () {
+                searchCards.forEach(card => {
+                    card.classList.remove("chosen-search-card");
+                });
+
+                card.classList.add("chosen-search-card");
+                chosenSearch = card.querySelector(".title").textContent.toLowerCase();
+            });
+        });
+
+        redirectBtn.addEventListener("click", function () {
+            if (chosenSearch === "support") {
+                window.location.href = "/support";
+            } else {
+                window.location.href = "/search/users";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ban Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+            font-family: "Roboto Slab", serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .card {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+            width: 90%;
+            box-sizing: border-box;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 100px;
+        }
+
+        .group, .group-overflow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+        }
+
+        .group-overflow {
+            justify-content: flex-start;
+            overflow: auto;
+        }
+
+        button {
+            background-color: #222;
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+
+        .item {
+            background-color: beige;
+            color: black;
+            padding: 5px;
+            text-align: center;
+            border-radius: 100px;
+            font-weight: bold;
+            margin-top: 10px;
+            width: 100%;
+            scroll-snap-align: start;
+            flex: 0 0 100%;
+            box-sizing: border-box;
+        }
+
+        .nav-btn {
+            background-color: orange;
+        }
+
+        .username {
+            color: rgb(255, 81, 0);
+            font-size: 20px;
+        }
+
+        #report-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            width: 100%;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+
+        .ban-user {
+            background-color: red;
+            width: 100%;
+        }
+
+        .ban-user:hover {
+            background-color: darkred;
+        }
+
+        #current-count {
+            text-align: center;
+        }
+
+        .report-user {
+            background-color: aqua;
+        }
+
+        .report-user:hover {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Welcome admin!</br> Enjoy you day. 🎉</h1>
+        <div class="group">
+            <input type="text" placeholder="Username..." id="username" />
+            <button id="search">Search</button>
+        </div></br>
+
+        <div id="report-container">
+            <div class="item">
+                <p>Type a username to see the reports!</p>
+            </div>
+        </div></br>
+
+        <p id="current-count"></p>
+
+        <div class="group">
+            <button class="nav-btn" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script src="/js/ban-panel.js"></script>
+</body>
+
+</html>

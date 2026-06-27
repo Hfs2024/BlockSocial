@@ -1,0 +1,185 @@
+body {
+    background-color: #eee;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Slab", serif;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #222;
+}
+
+footer {
+    border-bottom: none;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cursive {
+    color: red;
+    font-family: "Cedarville Cursive", cursive;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    gap: 10px;
+    background-color: #eee;
+}
+
+
+.invalid {
+    border: 2px solid red;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-20px);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+input,
+textarea {
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background-color: white;
+    max-height: 300px;
+    overflow: auto;
+}
+
+button {
+    color: white;
+    padding: 10px;
+    border-radius: 100px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.other-btn {
+    background-color: #222;
+}
+
+.other-btn:hover {
+    background-color: #444;
+}
+
+.like-btn {
+    color: green;
+    font-size: 20px;
+}
+
+.dislike-btn {
+    color: red;
+    font-size: 20px;
+}
+
+.view-btn {
+    color: orange;
+    font-size: 20px;
+}
+
+.line {
+    border: 2px solid rgb(96, 195, 135);
+    width: 90%;
+    margin: auto;
+}
+
+.icon__1 {
+    color: orange;
+    font-size: 40px;
+}
+
+.icon__2 {
+    color: rgb(104, 84, 47);
+    font-size: 40px;
+}
+
+
+.icon__3 {
+    color: rgb(29, 88, 164);
+    font-size: 20px;
+}
+
+.articles-container {
+    background-color: #555;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    color: white;
+    font-weight: bold;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+.article {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    white-space: normal;
+    word-break: break-all;
+    margin-top: 20px;
+}
+
+.view-mode {
+    position: fixed;
+    background-color: #ded6d6;
+    color: black;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-height: 95%;
+    overflow: auto;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+.nav-btn {
+    color: #222;
+}
+
+.line {
+    border: 2px solid #333;
+}
