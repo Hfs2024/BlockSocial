@@ -35,7 +35,12 @@ router.post("/delete/post", checkAuth, async (req, res) => {
     const { id } = req.body;
 
     try {
-        const foundPost = await schemas.Posts.findOne({ _id: id, by: req.currentUser.username });
+        const foundPost = await schemas.Posts.findOne({
+            $or: [
+                { _id: id, by: req.currentUser.username, share: false },
+                { _id: id, sharedBy: req.currentUser.username, share: true }
+            ]
+        });
         if (!foundPost) return res.json({
             error: "Post not found!"
         });

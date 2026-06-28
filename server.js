@@ -672,8 +672,16 @@ app.get("/get/profile/post/", checkAuth, async (req, res) => {
         const skip = parseInt(req.query.skip);
 
         const found = await schemas.Posts.find({
-            by: req.currentUser.username.trim().toLowerCase(),
-            share: false
+            $or: [
+                {
+                    by: req.currentUser.username.trim().toLowerCase(),
+                    share: false
+                },
+                {
+                    sharedBy: req.currentUser.username.trim().toLowerCase(),
+                    share: true
+                }
+            ]
         }).skip(skip).limit(50).lean();
 
         return res.json({
@@ -835,7 +843,6 @@ app.get("/get/:item", async (req, res) => {
         let getItem = null;
 
         if (item === "allUsers") getItem = await schemas.Users.find({ banned: false }).lean().skip(skip).limit(50);
-        else if (item === "allPosts") getItem = await schemas.Posts.find({ private: false }).lean().skip(skip).limit(50);
         else if (item === "count") {
             return res.json({ success: true, count: await schemas.Users.countDocuments({}, { hint: "_id_" }) })
         }
